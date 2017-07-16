@@ -257,6 +257,32 @@ static void conc3d(Cache,SBPP,DBPP) (const void * s) {
 #undef SCALERHEIGHT
 #undef SCALERFUNC
 
+#define SCALERNAME      Normal4x
+#define SCALERWIDTH     4
+#define SCALERHEIGHT    4
+#define SCALERFUNC                               \
+    line0[0] = P;                                \
+    line0[1] = P;                                \
+    line0[2] = P;                                \
+    line0[3] = P;                                \
+    line1[0] = P;                                \
+    line1[1] = P;                                \
+    line1[2] = P;                                \
+    line1[3] = P;                                \
+    line2[0] = P;                                \
+    line2[1] = P;                                \
+    line2[2] = P;                                \
+    line2[3] = P;                                \
+    line3[0] = P;                                \
+    line3[1] = P;                                \
+    line3[2] = P;                                \
+    line3[3] = P;
+#include "render_simple.h"
+#undef SCALERNAME
+#undef SCALERWIDTH
+#undef SCALERHEIGHT
+#undef SCALERFUNC
+
 #define SCALERNAME		NormalDw
 #define SCALERWIDTH		2
 #define SCALERHEIGHT	1

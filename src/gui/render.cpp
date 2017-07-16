@@ -287,6 +287,8 @@ static void RENDER_Reset( void ) {
 			simpleBlock = &ScaleNormal2x;
 		else if (render.scale.size == 3)
 			simpleBlock = &ScaleNormal3x;
+		else if (render.scale.size == 4)
+            simpleBlock = &ScaleNormal4x;
 		else
 			simpleBlock = &ScaleNormal1x;
 		/* Maybe override them */
@@ -596,6 +598,7 @@ void RENDER_Init(Section * sec) {
 	if (scaler == "none") { render.scale.op = scalerOpNormal;render.scale.size = 1; }
 	else if (scaler == "normal2x") { render.scale.op = scalerOpNormal;render.scale.size = 2; }
 	else if (scaler == "normal3x") { render.scale.op = scalerOpNormal;render.scale.size = 3; }
+	else if (scaler == "normal4x") { render.scale.op = scalerOpNormal;render.scale.size = 4; }
 #if RENDER_USE_ADVANCED_SCALERS>2
 	else if (scaler == "advmame2x") { render.scale.op = scalerOpAdvMame;render.scale.size = 2; }
 	else if (scaler == "advmame3x") { render.scale.op = scalerOpAdvMame;render.scale.size = 3; }
